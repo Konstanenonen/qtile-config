@@ -42,17 +42,22 @@ keys = [
     Key([mod], "l", lazy.layout.right(), desc="Move focus to right"),
     Key([mod], "j", lazy.layout.down(), desc="Move focus down"),
     Key([mod], "k", lazy.layout.up(), desc="Move focus up"),
-    Key([mod], "space", lazy.layout.next(), desc="Move window focus to other window"),
+    Key([mod], "space", lazy.layout.next(),
+        desc="Move window focus to other window"),
     # Move windows between left/right columns or move up/down in current stack.
     # Moving out of range in Columns layout will create new column.
-    Key([mod, "shift"], "h", lazy.layout.shuffle_left(), desc="Move window to the left"),
-    Key([mod, "shift"], "l", lazy.layout.shuffle_right(), desc="Move window to the right"),
+    Key([mod, "shift"], "h", lazy.layout.shuffle_left(),
+        desc="Move window to the left"),
+    Key([mod, "shift"], "l", lazy.layout.shuffle_right(),
+        desc="Move window to the right"),
     Key([mod, "shift"], "j", lazy.layout.shuffle_down(), desc="Move window down"),
     Key([mod, "shift"], "k", lazy.layout.shuffle_up(), desc="Move window up"),
     # Grow windows. If current window is on the edge of screen and direction
     # will be to screen edge - window would shrink.
-    Key([mod, "control"], "h", lazy.layout.grow_left(), desc="Grow window to the left"),
-    Key([mod, "control"], "l", lazy.layout.grow_right(), desc="Grow window to the right"),
+    Key([mod, "control"], "h", lazy.layout.grow_left(),
+        desc="Grow window to the left"),
+    Key([mod, "control"], "l", lazy.layout.grow_right(),
+        desc="Grow window to the right"),
     Key([mod, "control"], "j", lazy.layout.grow_down(), desc="Grow window down"),
     Key([mod, "control"], "k", lazy.layout.grow_up(), desc="Grow window up"),
     Key([mod], "n", lazy.layout.normalize(), desc="Reset all window sizes"),
@@ -86,7 +91,8 @@ fourth_group = Group("4", label="4")
 fifth_group = Group("5", label="5")
 sixth_group = Group("6", label="6")
 
-groups = [first_group, second_group, third_group, fourth_group, fifth_group, sixth_group]
+groups = [first_group, second_group, third_group,
+          fourth_group, fifth_group, sixth_group]
 
 for i in groups:
     keys.extend(
@@ -103,7 +109,8 @@ for i in groups:
                 [mod, "shift"],
                 i.name,
                 lazy.window.togroup(i.name, switch_group=True),
-                desc="Switch to & move focused window to group {}".format(i.name),
+                desc="Switch to & move focused window to group {}".format(
+                    i.name),
             ),
             # Or, use below if you prefer not to switch to that group.
             # # mod1 + shift + letter of group = move focused window to group
@@ -113,7 +120,8 @@ for i in groups:
     )
 
 layouts = [
-    layout.Columns(border_focus="#0093fc", border_on_single="#0093fc", border_focus_stack=["#0093fc", "#8f3d3d"], border_width=4, margin_on_single=40, margin=15),
+    layout.Columns(border_focus="#0093fc", border_on_single="#0093fc", border_focus_stack=[
+                   "#0093fc", "#8f3d3d"], border_width=4, margin_on_single=40, margin=15),
     layout.Max(),
     # Try more layouts by unleashing below layouts.
     # layout.Stack(num_stacks=2),
@@ -140,19 +148,19 @@ screens = [
     Screen(
         top=bar.Bar(
             [
+                widget.GroupBox(active="0093fc", inactive="cecece"),
+                widget.Sep(linewidth=2, padding=4),
                 widget.CurrentLayout(),
-                widget.GroupBox(active="0093fc"),
-                widget.Prompt(),
-                widget.WindowName(),
-                widget.Chord(
-                    chords_colors={
-                        "launch": ("#000000", "#ff0000"),
-                    },
-                    name_transform=lambda name: name.upper(),
-                ),
-                widget.Systray(),
+                widget.Sep(linewidth=2, padding=4),
+                widget.WindowName(max_chars=50),
+                widget.Memory(),
+                widget.Sep(linewidth=2, padding=4),
+                widget.Volume(),
+                widget.Sep(linewidth=2, padding=4),
                 widget.Clock(format="%Y-%m-%d %a %I:%M %p"),
-                widget.QuickExit(),
+                widget.Sep(linewidth=2, padding=4),
+                widget.Systray(),
+                widget.BatteryIcon(),
             ],
             24,
             background='FFFFFF',
@@ -165,8 +173,10 @@ screens = [
 
 # Drag floating layouts.
 mouse = [
-    Drag([mod], "Button1", lazy.window.set_position_floating(), start=lazy.window.get_position()),
-    Drag([mod], "Button3", lazy.window.set_size_floating(), start=lazy.window.get_size()),
+    Drag([mod], "Button1", lazy.window.set_position_floating(),
+         start=lazy.window.get_position()),
+    Drag([mod], "Button3", lazy.window.set_size_floating(),
+         start=lazy.window.get_size()),
     Click([mod], "Button2", lazy.window.bring_to_front()),
 ]
 
@@ -209,6 +219,8 @@ wl_input_rules = None
 wmname = "LG3D"
 
 # Setting the startup.sh script to start when qtile starts
+
+
 @hook.subscribe.startup
 def autostart():
     home = os.path.expanduser('~/.config/qtile/startup.sh')
