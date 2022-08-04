@@ -79,7 +79,14 @@ keys = [
     Key([mod], "b", lazy.spawn("brave-browser")),
 ]
 
-groups = [Group(i) for i in "123456789"]
+first_group = Group("1", label="Terminal: 1")
+second_group = Group("2", label="Web: 2")
+third_group = Group("3", label="Code: 3")
+fourth_group = Group("4", label="4")
+fifth_group = Group("5", label="5")
+sixth_group = Group("6", label="6")
+
+groups = [first_group, second_group, third_group, fourth_group, fifth_group, sixth_group]
 
 for i in groups:
     keys.extend(
@@ -123,7 +130,7 @@ layouts = [
 
 widget_defaults = dict(
     font="sans",
-    fontsize=12,
+    fontsize=14,
     padding=3,
 )
 extension_defaults = widget_defaults.copy()
@@ -138,7 +145,7 @@ screens = [
                 widget.WindowName(),
                 widget.Chord(
                     chords_colors={
-                        "launch": ("#ff0000", "#ffffff"),
+                        "launch": ("#000000", "#ff0000"),
                     },
                     name_transform=lambda name: name.upper(),
                 ),
@@ -149,6 +156,8 @@ screens = [
                 widget.QuickExit(),
             ],
             24,
+            background='000000',
+            opacity=0.8
             # border_width=[2, 0, 2, 0],  # Draw top and bottom borders
             # border_color=["ff00ff", "000000", "ff00ff", "000000"]  # Borders are magenta
         ),
