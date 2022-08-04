@@ -85,8 +85,9 @@ keys = [
 ]
 
 first_group = Group("1", label="Terminal: 1")
-second_group = Group("2", label="Web: 2")
-third_group = Group("3", label="Code: 3")
+second_group = Group("2", label="Web: 2", matches=[
+                     Match(wm_class="Brave-browser")])
+third_group = Group("3", label="Code: 3", matches=[Match(wm_class="Code")])
 fourth_group = Group("4", label="4")
 fifth_group = Group("5", label="5")
 sixth_group = Group("6", label="6")
