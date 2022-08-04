@@ -113,7 +113,7 @@ for i in groups:
     )
 
 layouts = [
-    layout.Columns(border_focus="#2189a0", border_on_single="#2189a0", border_focus_stack=["#2189a0", "#8f3d3d"], border_width=4, margin_on_single=50, margin=15),
+    layout.Columns(border_focus="#0093fc", border_on_single="#0093fc", border_focus_stack=["#0093fc", "#8f3d3d"], border_width=4, margin_on_single=40, margin=15),
     layout.Max(),
     # Try more layouts by unleashing below layouts.
     # layout.Stack(num_stacks=2),
@@ -132,6 +132,7 @@ widget_defaults = dict(
     font="sans",
     fontsize=14,
     padding=3,
+    foreground="000000"
 )
 extension_defaults = widget_defaults.copy()
 
@@ -140,7 +141,7 @@ screens = [
         top=bar.Bar(
             [
                 widget.CurrentLayout(),
-                widget.GroupBox(),
+                widget.GroupBox(active="0093fc"),
                 widget.Prompt(),
                 widget.WindowName(),
                 widget.Chord(
@@ -149,14 +150,12 @@ screens = [
                     },
                     name_transform=lambda name: name.upper(),
                 ),
-                widget.TextBox("default config", name="default"),
-                widget.TextBox("Press &lt;M-r&gt; to spawn", foreground="#d75f5f"),
                 widget.Systray(),
                 widget.Clock(format="%Y-%m-%d %a %I:%M %p"),
                 widget.QuickExit(),
             ],
             24,
-            background='00183a',
+            background='FFFFFF',
             opacity=0.8
             # border_width=[2, 0, 2, 0],  # Draw top and bottom borders
             # border_color=["ff00ff", "000000", "ff00ff", "000000"]  # Borders are magenta
