@@ -153,7 +153,7 @@ screens = [
                 widget.Sep(linewidth=2, padding=4),
                 widget.CurrentLayout(),
                 widget.Sep(linewidth=2, padding=4),
-                widget.WindowName(),
+                widget.WindowName(max_chars=45),
                 widget.Sep(linewidth=2, padding=4),
                 widget.CPU(),
                 widget.Sep(linewidth=2, padding=4),
