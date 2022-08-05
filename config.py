@@ -138,8 +138,8 @@ layouts = [
 ]
 
 widget_defaults = dict(
-    font="sans",
-    fontsize=14,
+    font="Hack Nerd Font Mono:style=Bold",
+    fontsize=15,
     padding=3,
     foreground="000000"
 )
@@ -153,7 +153,7 @@ screens = [
                 widget.Sep(linewidth=2, padding=4),
                 widget.CurrentLayout(),
                 widget.Sep(linewidth=2, padding=4),
-                widget.WindowName(max_chars=45),
+                widget.WindowName(),
                 widget.Sep(linewidth=2, padding=4),
                 widget.CPU(),
                 widget.Sep(linewidth=2, padding=4),
@@ -168,7 +168,7 @@ screens = [
                 widget.Systray(),
                 widget.BatteryIcon(),
             ],
-            24,
+            30,
             background='FFFFFF',
             opacity=0.8
             # border_width=[2, 0, 2, 0],  # Draw top and bottom borders
