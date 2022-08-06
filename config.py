@@ -151,8 +151,6 @@ screens = [
             [
                 widget.GroupBox(active="0093fc", inactive="cecece"),
                 widget.Sep(linewidth=2, padding=4),
-                widget.CurrentLayout(),
-                widget.Sep(linewidth=2, padding=4),
                 widget.WindowName(),
                 widget.Sep(linewidth=2, padding=4),
                 widget.CPU(),
