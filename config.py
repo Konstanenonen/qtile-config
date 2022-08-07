@@ -147,7 +147,11 @@ screens = [
     Screen(
         top=bar.Bar(
             [
-                widget.GroupBox(active="0093fc", inactive="cecece"),
+                widget.GroupBox(
+                    active="0093fc",
+                    inactive="cecece",
+                    this_current_screen_border="0093fc"
+                ),
                 widget.Spacer(length=25),
                 widget.WindowName(),
                 widget.Spacer(length=25),
