@@ -84,16 +84,14 @@ keys = [
     Key([mod], "b", lazy.spawn("brave-browser")),
 ]
 
-first_group = Group("1", label="Terminal: 1")
-second_group = Group("2", label="Web: 2", matches=[
+first_group = Group("1", label="Terminal")
+second_group = Group("2", label="Web", matches=[
                      Match(wm_class="Brave-browser")])
-third_group = Group("3", label="Code: 3", matches=[Match(wm_class="Code")])
-fourth_group = Group("4", label="4")
-fifth_group = Group("5", label="5")
-sixth_group = Group("6", label="6")
+third_group = Group("3", label="Code", matches=[Match(wm_class="Code")])
+fourth_group = Group("4", label="Random")
 
 groups = [first_group, second_group, third_group,
-          fourth_group, fifth_group, sixth_group]
+          fourth_group]
 
 for i in groups:
     keys.extend(
@@ -139,7 +137,7 @@ layouts = [
 
 widget_defaults = dict(
     font="Hack Nerd Font Mono:style=Bold",
-    fontsize=15,
+    fontsize=14,
     padding=3,
     foreground="000000"
 )
@@ -150,23 +148,23 @@ screens = [
         top=bar.Bar(
             [
                 widget.GroupBox(active="0093fc", inactive="cecece"),
-                widget.Sep(linewidth=2, padding=4),
+                widget.Spacer(length=20),
                 widget.WindowName(),
-                widget.Sep(linewidth=2, padding=4),
+                widget.Spacer(length=20),
                 widget.CPU(),
-                widget.Sep(linewidth=2, padding=4),
+                widget.Spacer(length=20),
                 widget.TextBox(text="MEM"),
                 widget.Memory(),
-                widget.Sep(linewidth=2, padding=4),
+                widget.Spacer(length=20),
                 widget.TextBox(text="VOL"),
                 widget.Volume(),
-                widget.Sep(linewidth=2, padding=4),
+                widget.Spacer(length=20),
                 widget.Clock(format="%A, %B %d - %H.%M"),
-                widget.Sep(linewidth=2, padding=4),
+                widget.Spacer(length=20),
                 widget.Systray(),
                 widget.BatteryIcon(),
             ],
-            30,
+            28,
             background='FFFFFF',
             opacity=0.8
             # border_width=[2, 0, 2, 0],  # Draw top and bottom borders
