@@ -77,11 +77,12 @@ keys = [
     Key([mod], "w", lazy.window.kill(), desc="Kill focused window"),
     Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
-    Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
+    #Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
     # Custom keys
     Key([mod], "i", lazy.spawn("pcmanfm")),
     Key([mod], "d", lazy.spawn("dmenu_run -fn 'Deja Vu Sans Mono-13'")),
     Key([mod], "b", lazy.spawn("brave-browser")),
+    Key([mod], "f", lazy.window.toggle_fullscreen(), desc="Toggle fullscreen")
 ]
 
 first_group = Group("1", label="Terminal")
