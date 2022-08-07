@@ -161,7 +161,7 @@ screens = [
                 widget.TextBox(text="VOL"),
                 widget.Volume(),
                 widget.Sep(linewidth=2, padding=4),
-                widget.Clock(format="%Y-%m-%d %a %I:%M %p"),
+                widget.Clock(format="%A, %B %d - %H.%M"),
                 widget.Sep(linewidth=2, padding=4),
                 widget.Systray(),
                 widget.BatteryIcon(),
