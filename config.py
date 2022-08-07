@@ -80,7 +80,7 @@ keys = [
     Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
     # Custom keys
     Key([mod], "i", lazy.spawn("pcmanfm")),
-    Key([mod], "d", lazy.spawn("dmenu_run")),
+    Key([mod], "d", lazy.spawn("dmenu_run -fn 'Deja Vu Sans Mono-13'")),
     Key([mod], "b", lazy.spawn("brave-browser")),
 ]
 
@@ -148,23 +148,23 @@ screens = [
         top=bar.Bar(
             [
                 widget.GroupBox(active="0093fc", inactive="cecece"),
-                widget.Spacer(length=20),
+                widget.Spacer(length=25),
                 widget.WindowName(),
-                widget.Spacer(length=20),
+                widget.Spacer(length=25),
                 widget.CPU(),
-                widget.Spacer(length=20),
+                widget.Spacer(length=25),
                 widget.TextBox(text="MEM"),
                 widget.Memory(),
-                widget.Spacer(length=20),
+                widget.Spacer(length=25),
                 widget.TextBox(text="VOL"),
                 widget.Volume(),
-                widget.Spacer(length=20),
+                widget.Spacer(length=25),
                 widget.Clock(format="%A, %B %d - %H.%M"),
-                widget.Spacer(length=20),
+                widget.Spacer(length=25),
                 widget.Systray(),
                 widget.BatteryIcon(),
             ],
-            28,
+            24,
             background='FFFFFF',
             opacity=0.8
             # border_width=[2, 0, 2, 0],  # Draw top and bottom borders
