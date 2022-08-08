@@ -191,7 +191,7 @@ screens = [
             ],
             24,
             background='FFFFFF',
-            opacity=0.8
+            opacity=0.5
             # border_width=[2, 0, 2, 0],  # Draw top and bottom borders
             # border_color=["ff00ff", "000000", "ff00ff", "000000"]  # Borders are magenta
         ),
