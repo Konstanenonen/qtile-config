@@ -97,9 +97,15 @@ third_group = Group(
     matches=[Match(wm_class="Code")]
 )
 fourth_group = Group("4", label="Random")
+fifth_group = Group("5", label="Hidden")
 
-groups = [first_group, second_group, third_group,
-          fourth_group]
+groups = [
+    first_group,
+    second_group,
+    third_group,
+    fourth_group,
+    fifth_group
+]
 
 for i in groups:
     keys.extend(
@@ -164,7 +170,8 @@ screens = [
                 widget.GroupBox(
                     active="0093fc",
                     inactive="cecece",
-                    this_current_screen_border="0093fc"
+                    this_current_screen_border="0093fc",
+                    visible_groups=["1", "2", "3", "4"]
                 ),
                 widget.Spacer(length=25),
                 widget.WindowName(),

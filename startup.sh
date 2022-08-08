@@ -15,4 +15,3 @@ blueman-applet &
 
 # Open terminal
 kitty &
-brave-browser &
