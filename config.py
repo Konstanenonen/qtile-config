@@ -167,6 +167,7 @@ screens = [
     Screen(
         top=bar.Bar(
             [
+                widget.Spacer(length=10),
                 widget.GroupBox(
                     active="0093fc",
                     inactive="cecece",
@@ -188,6 +189,7 @@ screens = [
                 widget.Spacer(length=25),
                 widget.Systray(),
                 widget.BatteryIcon(),
+                widget.Spacer(length=10),
             ],
             24,
             background='FFFFFF',
