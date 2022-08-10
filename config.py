@@ -134,9 +134,9 @@ for i in groups:
 
 layouts = [
     layout.Columns(
-        border_focus="#0093fc",
-        border_on_single="#0093fc",
-        border_focus_stack=["#0093fc", "#8f3d3d"],
+        border_focus="#64c7fc",
+        border_on_single="#64c7fc",
+        border_focus_stack=["#64c7fc", "#8f3d3d"],
         border_width=5,
         margin_on_single=15,
         margin=15
@@ -169,9 +169,9 @@ screens = [
             [
                 widget.Spacer(length=10),
                 widget.GroupBox(
-                    active="0093fc",
+                    active="000000",
                     inactive="cecece",
-                    this_current_screen_border="0093fc",
+                    this_current_screen_border="64c7fc",
                     visible_groups=["1", "2", "3", "4"]
                 ),
                 widget.Spacer(length=25),
