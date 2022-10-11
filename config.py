@@ -137,7 +137,7 @@ layouts = [
         border_focus="#64c7fc",
         border_on_single="#64c7fc",
         border_focus_stack=["#64c7fc", "#8f3d3d"],
-        border_width=5,
+        border_width=3,
         margin_on_single=15,
         margin=15
     ),
